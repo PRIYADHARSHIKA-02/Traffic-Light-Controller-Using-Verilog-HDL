@@ -51,44 +51,27 @@ always @(posedge clk )
 
 begin 
      if (rst) 
-     
   begin 
-  
     light <= 3'b0; 
-    state <= S0;
-    
+    state <= S0; 
    end 
-   
 else
-
    begin
-   
-      case (state) 
-      
+      case (state)  
        S0: 
    begin 
-   
        light <= Green; 
-       
        state <= S1; 
   end 
-      
       S1: 
   begin 
-  
         light <= Yellow; 
-        
         state <= S2; 
    end 
-   
 S2: 
-
 begin 
-
-    light <= Red; 
-    
-    state <= S0; 
-    
+     light <= Red; 
+     state <= S0; 
 end 
 
 default: light <= 3'b0; 
